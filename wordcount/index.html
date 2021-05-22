@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字数统计</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <el-container>
+            <el-header>
+                <el-row type="flex" justify="center">
+                    <el-col :span="4">BlackSoil's Webtool</el-col>
+                    <el-col :span="16"><h1>字数统计</h1></el-col>
+                    <el-col :span="4"></el-col>
+                </el-row>
+            </el-header>
+            <el-main>
+                <el-card>
+                    <h3>字符数: {{characterCount}}&nbsp;&nbsp;单词数: {{wordCount}}</h3>
+                    <el-input v-model="inputContent" type="textarea" :autosize="{minRows:6, maxRows: 15}" placeholder="请输入需要统计的文本..." spellcheck="false"></el-input>
+                </el-card>
+                <el-card>
+                    <h3>提示</h3>
+                    <ul>
+                        <li>单词间的分隔符需为一个空格</li>
+                    </ul>
+                </el-card>
+            </el-main>
+        </el-container>
+    </div>
+
+
+    <script src="../vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
