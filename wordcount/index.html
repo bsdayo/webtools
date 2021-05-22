@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>字数统计</title>
+    <title>字数统计 - BlackSoil's Webtools</title>
     
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../basic-style.css">
 </head>
 <body>
     <div id="app">
         <el-container>
             <el-header>
-                <el-row type="flex" justify="center">
-                    <el-col :span="4">BlackSoil's Webtool</el-col>
-                    <el-col :span="16"><h1>字数统计</h1></el-col>
-                    <el-col :span="4"></el-col>
-                </el-row>
+                <h1>字数统计</h1>
             </el-header>
             <el-main>
                 <el-card>
@@ -34,9 +33,6 @@
         </el-container>
     </div>
 
-
-    <script src="../vue.js"></script>
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="main.js"></script>
 </body>
 
