@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>随机五十音练习 - BlackSoil's Webtools</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../basic-style.css">
+    
+    <script src="data.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-header>随机五十音练习</el-header>
+            <el-main>
+                <el-card>
+                    <div id="settingDiv">
+                        <strong>范围</strong><br /><br />
+                        <el-checkbox-group v-model="rowRange" :min="1">
+                            <el-checkbox label="あ行"></el-checkbox>
+                            <el-checkbox label="か行"></el-checkbox>
+                            <el-checkbox label="さ行"></el-checkbox>
+                            <el-checkbox label="た行"></el-checkbox>
+                            <el-checkbox label="な行"></el-checkbox>
+                            <el-checkbox label="は行"></el-checkbox>
+                            <el-checkbox label="ま行"></el-checkbox>
+                            <el-checkbox label="や行"></el-checkbox>
+                            <el-checkbox label="ら行"></el-checkbox>
+                            <el-checkbox label="わ行"></el-checkbox>
+                        </el-checkbox-group>
+                        
+                        <el-divider></el-divider>
+                        
+                        <strong>假名&emsp;&emsp;</strong>
+                        <el-radio-group v-model="kana" size="small">
+                            <el-radio-button label="平假"></el-radio-button>
+                            <el-radio-button label="片假"></el-radio-button>
+                        </el-radio-group>
+                        
+                        <el-divider></el-divider>
+                        
+                        <strong>数量&emsp;&emsp;</strong>
+                        <el-input-number v-model="count" :min="1"></el-input-number>
+                    </div>
+                    
+                    <el-divider></el-divider>
+                    
+                    <el-button id="genBtn" type="primary" @click="generate">生成</el-button>
+                </el-card>
+                
+                <el-card>
+                    <strong>{{practice}}</strong>
+                    <br />
+                    <br />
+                    <el-button type="primary" @click="ifAnswersSeen=!ifAnswersSeen">显示 / 隐藏答案</el-button>
+                    <div v-if="ifAnswersSeen">
+                        <hr />
+                        <strong>{{answers}}</strong>
+                    </div>
+                </el-card>
+                
+                <el-card>
+                    <h3>使用说明</h3>
+                    <el-divider></el-divider>
+                    <p>
+                        准备一张纸和一只笔，在上方配置好练习范围和数量，点击生成按钮即可生成对应练习。<br />
+                        根据生成的假名，在纸上默写对应的发音，最后点击显示答案按钮对照批改，即可达到良好的练习效果。
+                    </p>
+                </el-card>
+            </el-main>
+        </el-container>
+    </div>
+
+    <script src="main.js"></script>
+    
+    <style>
+        #settingDiv {
+            text-align: left;
+        }
+    </style>
+</body>
+
+</html>
