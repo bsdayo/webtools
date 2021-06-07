@@ -4,3 +4,4 @@
 
 ## 索引
 * [wordcount](https://b1acksoil.github.io/webtools/wordcount/) - 字数统计 (2021.05.22更新)
+* [randjp50](https://b1acksoil.github.io/webtools/randjp50/) - 随机五十音练习（2021.06.08更新）

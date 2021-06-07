@@ -16,7 +16,7 @@
         <el-container>
             <el-header>BlackSoil's Webtools</el-header>
             <el-main>
-                <el-card>
+                <el-card style="text-align: left;">
                     <p>本站收录了一些我用于练手的网页小工具，大多使用Vue+element-ui编写</p>
                     <ul v-for="tool in toolsList">
                         <li>
@@ -35,7 +35,8 @@
         el: '#app',
         data: {
             toolsList: [
-                {name: 'wordcount', desc:'字数统计', update:'2021.05.22'}
+                {name: 'wordcount', desc: '字数统计', update: '2021.05.22'},
+                {name: 'randjp50', desc: '随机五十音练习', update: '2021.06.08'}
             ]
         }
     })
