@@ -68,5 +68,8 @@ var jpData = {
         { 'hara': 'う', 'kata': 'ウ', 'pron': 'u' },
         { 'hara': 'え', 'kata': 'エ', 'pron': 'e' },
         { 'hara': 'を', 'kata': 'ヲ', 'pron': 'wo' }
+    ],
+    'ん行': [
+        { 'hara': 'ん', 'kata': 'ン', 'pron': 'n' }
     ]
 }
