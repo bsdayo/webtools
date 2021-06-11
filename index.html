@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>BlackSoil's Webtools</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <link rel="stylesheet" href="basic-style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BlackSoil's Webtools</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="basic-style.css">
 </head>
+
 <body>
-    <div id="app">
-        <el-container>
-            <el-header>BlackSoil's Webtools</el-header>
-            <el-main>
-                <el-card style="text-align: left;">
-                    <p>本站收录了一些我用于练手的网页小工具，大多使用Vue+element-ui编写</p>
-                    <ul v-for="tool in toolsList">
-                        <li>
-                            <el-link :href="tool.name+'/'">{{tool.name}}</el-link>
-                             - {{tool.desc}} ({{tool.update}}更新)
-                        </li>
-                    </ul>
-                </el-card>
-            </el-main>
-        </el-container>
-    </div>
+  <div id="app">
+    <el-container>
+      <el-header>BlackSoil's Webtools</el-header>
+      <el-main>
+        <el-card style="text-align: left;">
+          <p>本站收录了一些我用于练手的网页小工具，大多使用Vue+element-ui编写</p>
+          <ul v-for="tool in toolsList">
+            <li>
+              <el-link :href="tool.name+'/'">{{tool.name}}</el-link>
+              - {{tool.desc}} ({{tool.update}}更新)
+            </li>
+          </ul>
+        </el-card>
+      </el-main>
+    </el-container>
+  </div>
 </body>
 
 <script>
-    const app = new Vue({
-        el: '#app',
-        data: {
-            toolsList: [
-                {name: 'wordcount', desc: '字数统计', update: '2021.05.22'},
-                {name: 'randjp50', desc: '随机五十音练习', update: '2021.06.08'}
-            ]
-        }
-    })
+  const app = new Vue({
+    el: '#app',
+    data: {
+      toolsList: [
+        { name: 'wordcount', desc: '字数统计', update: '2021.05.22' },
+        { name: 'randjp50', desc: '随机五十音练习', update: '2021.06.08' }
+      ]
+    }
+  })
 </script>
 
 </html>
