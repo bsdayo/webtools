@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>随机五十音练习 - BlackSoil's Webtools</title>
   <link rel="shortcut icon" href="./favicon.ico">
 
@@ -48,13 +48,21 @@
 
             <el-divider></el-divider>
 
+            <strong>模式&emsp;&emsp;</strong>
+            <el-radio-group v-model="genMode" size="small">
+              <el-radio-button label="kana2pron">假名 ‣ 发音</el-radio-button>
+              <el-radio-button label="pron2kana">发音 ‣ 假名</el-radio-button>
+            </el-radio-group>
+
+            <el-divider></el-divider>
+
             <strong>数量&emsp;&emsp;</strong>
             <el-input-number v-model="count" :min="1" :max="100"></el-input-number>
           </div>
 
           <el-divider></el-divider>
 
-          <el-button id="genBtn" type="primary" @click="generate">生成</el-button>
+          <el-button id="genBtn" type="primary" @click="gen">生成</el-button>
         </el-card>
 
         <el-card>
