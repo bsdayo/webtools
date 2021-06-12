@@ -16,8 +16,23 @@
   <script src="data.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
+<style>
+  [v-cloak] {
+    display: none;
+  }
+
+  #settingDiv {
+    text-align: left;
+  }
+
+  .range-divider {
+    margin: 5px 0;
+    background-color: white;
+  }
+</style>
+
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <el-container>
       <el-header>随机五十音练习</el-header>
       <el-main>
@@ -87,17 +102,6 @@
   </div>
 
   <script src="main.js"></script>
-
-  <style>
-    #settingDiv {
-      text-align: left;
-    }
-    
-    .range-divider {
-      margin: 5px 0;
-      background-color: white;
-    }
-  </style>
 </body>
 
 </html>
