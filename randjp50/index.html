@@ -27,9 +27,11 @@
             <el-checkbox v-model="isAllSelected" @change="selectAll">全选</el-checkbox>
             <br /><br />
             <el-checkbox-group v-model="rowRange" :min="1">
-              <el-checkbox v-for="row in Object.keys(jpData).slice(0, 11)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox><br />
-              <el-checkbox v-for="row in Object.keys(jpData).slice(11, 16)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox><br />
-              <el-checkbox v-for="row in Object.keys(jpData).slice(16)" :label="row" @change="onRangeChange">{{row}}</el-checkbox><br />
+              <el-checkbox v-for="row in Object.keys(jpData).slice(0, 11)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox>
+              <el-divider class="range-divider"></el-divider>
+              <el-checkbox v-for="row in Object.keys(jpData).slice(11, 16)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox>
+              <el-divider class="range-divider"></el-divider>
+              <el-checkbox v-for="row in Object.keys(jpData).slice(16)" :label="row" @change="onRangeChange">{{row}}</el-checkbox>
             </el-checkbox-group>
 
             <el-divider></el-divider>
@@ -89,6 +91,11 @@
   <style>
     #settingDiv {
       text-align: left;
+    }
+    
+    .range-divider {
+      margin: 5px 0;
+      background-color: white;
     }
   </style>
 </body>
