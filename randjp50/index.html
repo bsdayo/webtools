@@ -23,19 +23,13 @@
       <el-main>
         <el-card>
           <div id="settingDiv">
-            <strong>范围</strong><br /><br />
+            <strong>范围&emsp;&emsp;</strong>
+            <el-checkbox v-model="isAllSelected" @change="selectAll">全选</el-checkbox>
+            <br /><br />
             <el-checkbox-group v-model="rowRange" :min="1">
-              <el-checkbox label="あ行"></el-checkbox>
-              <el-checkbox label="か行"></el-checkbox>
-              <el-checkbox label="さ行"></el-checkbox>
-              <el-checkbox label="た行"></el-checkbox>
-              <el-checkbox label="な行"></el-checkbox>
-              <el-checkbox label="は行"></el-checkbox>
-              <el-checkbox label="ま行"></el-checkbox>
-              <el-checkbox label="や行"></el-checkbox>
-              <el-checkbox label="ら行"></el-checkbox>
-              <el-checkbox label="わ行"></el-checkbox>
-              <el-checkbox label="ん行"></el-checkbox>
+              <el-checkbox v-for="row in Object.keys(jpData).slice(0, 11)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox><br />
+              <el-checkbox v-for="row in Object.keys(jpData).slice(11, 16)" :label="row" @change="onRangeChange">{{row}}　</el-checkbox><br />
+              <el-checkbox v-for="row in Object.keys(jpData).slice(16)" :label="row" @change="onRangeChange">{{row}}</el-checkbox><br />
             </el-checkbox-group>
 
             <el-divider></el-divider>
@@ -47,7 +41,7 @@
             </el-radio-group>
 
             <el-divider></el-divider>
-
+  
             <strong>模式&emsp;&emsp;</strong>
             <el-radio-group v-model="genMode" size="small">
               <el-radio-button label="kana2pron">假名 ‣ 发音</el-radio-button>

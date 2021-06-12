@@ -2,7 +2,9 @@ const app = new Vue({
   el: '#app',
   data: {
     jpData,
+    jpDataKeysCount: Object.keys(jpData).length,
     rowRange: ['あ行'],
+    isAllSelected: false,
     genMode: 'kana2pron',
     count: 5,
     kana: '平假',
@@ -10,6 +12,14 @@ const app = new Vue({
     practice: '点击按钮生成练习'
   },
   methods: {
+    selectAll(val) {
+      this.rowRange = val ? Object.keys(this.jpData) : ['あ行']
+    },
+    
+    onRangeChange() {
+      this.isAllSelected = this.rowRange.length == this.jpDataKeysCount
+    },
+    
     gen() {
       this.practice = ''
       this.answers = ''
@@ -25,9 +35,11 @@ const app = new Vue({
 
       for (let n = 0; n < this.count; n++) {
         let num = Math.floor(Math.random() * this.allQs.length)
-        this.practice += this.allQs[num] + ' '
-        this.answers += this.allAs[num] + ' '
+        this.practice += this.allQs[num] + '　'
+        this.answers += this.allAs[num] + '　'
       }
+      this.practice = this.practice.slice(0, -1)
+      this.answers = this.answers.slice(0, -1)
     },
 
     gen_kana2pron() {
@@ -35,7 +47,7 @@ const app = new Vue({
       for (let i of this.rowRange) {
         for (let c of this.jpData[i]) {
           if (this.kana == '平假') {
-            this.allQs.push(c['hara'])
+            this.allQs.push(c['hira'])
           } else if (this.kana == '片假') {
             this.allQs.push(c['kata'])
           }
@@ -49,7 +61,7 @@ const app = new Vue({
       for (let i of this.rowRange) {
         for (let c of this.jpData[i]) {
           if (this.kana == '平假') {
-            this.allAs.push(c['hara'])
+            this.allAs.push(c['hira'])
           } else if (this.kana == '片假') {
             this.allAs.push(c['kata'])
           }
