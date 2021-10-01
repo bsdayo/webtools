@@ -13,6 +13,6 @@ export default [
   },
   {
     path: '/:catchAll(.*)',
-    component: () => import('../views/About.vue')
+    redirect: '/'
   }
 ]
