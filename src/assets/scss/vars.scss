@@ -1,0 +1,33 @@
+@import './colors.scss';
+
+//==========
+// 颜色
+//==========
+
+// 主题色
+$color-primary: $color-teal;
+$color-secondary: $color-bluegrey;
+
+// 页面
+$color-page-bg: #333;
+$color-page-fg: #fff;
+
+// 导航栏
+$color-nav-bg: #222;
+
+
+//==========
+// 字体
+//==========
+
+// 主字体
+$font-main-name: 'Roboto Slab';
+$font-main-url: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap';
+
+
+//==========
+// 布局
+//==========
+
+// 导航栏
+$nav-height: 80px;
