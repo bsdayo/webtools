@@ -1,6 +1,8 @@
 export default [
   {
     path: '/',
+    redirect: '/home',
+    component: () => import('../App.vue'),
     children: [
       // Core
       { path: 'home', component: () => import('../views/Home.vue') },
@@ -13,6 +15,6 @@ export default [
   },
   {
     path: '/:catchAll(.*)',
-    redirect: '/'
+    redirect: '/home'
   }
 ]
