@@ -1,20 +1,19 @@
-export default [
+
+const routes = [
   {
     path: '/',
-    redirect: '/home',
-    component: () => import('../App.vue'),
+    component: () => import('layouts/MainLayout.vue'),
     children: [
-      // Core
-      { path: 'home', component: () => import('../views/Home.vue') },
-
-      // Tools
-      // { path: 'arcpurchase', component: () => import('../views/Home.vue') },
-      { path: 'randjp50', component: () => import('../views/randjp50.vue') },
-      // { path: 'wordcount', component: () => import('../views/Home.vue') },
+      { path: '', component: () => import('pages/Index.vue') }
     ]
   },
+
+  // Always leave this as last one,
+  // but you can also remove it
   {
-    path: '/:catchAll(.*)',
-    redirect: '/home'
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/Error404.vue')
   }
 ]
+
+export default routes
