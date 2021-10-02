@@ -35,7 +35,7 @@
     ]"
     @click="$emit('click')"
   >
-    <fa-icon :icon="$props.icon ? $props.icon : ''"></fa-icon> <slot></slot>
+    <fa-icon v-if="$props.icon" :icon="$props.icon"></fa-icon> <slot></slot>
   </button>
 </template>
 

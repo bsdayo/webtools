@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <p id="nav-title">b1acksoil's webtools</p>
+    <router-link to="/home" id="nav-title">b1acksoil's webtools</router-link>
 
     <BsButton
       id="nav-menu-button"
@@ -72,6 +72,7 @@ export default defineComponent({
   #nav-title {
     font-size: 24px;
     font-weight: 700;
+    text-decoration: none;
   }
 }
 

@@ -8,9 +8,9 @@ export default [
       { path: 'home', component: () => import('../views/Home.vue') },
 
       // Tools
-      { path: 'arcpurchase', component: () => import('../views/Home.vue') },
-      { path: 'randjp50', component: () => import('../views/Home.vue') },
-      { path: 'wordcount', component: () => import('../views/Home.vue') },
+      // { path: 'arcpurchase', component: () => import('../views/Home.vue') },
+      { path: 'randjp50', component: () => import('../views/randjp50.vue') },
+      // { path: 'wordcount', component: () => import('../views/Home.vue') },
     ]
   },
   {

@@ -42,7 +42,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 #greeting {
   text-align: center;
-  padding: 130px 0;
+  padding: 70px 0;
 
   #greeting-face {
     font-weight: 700;
