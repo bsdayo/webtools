@@ -1,1 +1,19 @@
-// app global css in SCSS form
+@import './variables.scss';
+
+@import url($font-main-url);
+
+* {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.page-tabs {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  z-index: 900;
+}
+
+.page-content {
+  margin-top: 50px;
+  padding: 40px;
+}

@@ -4,7 +4,10 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Index.vue') },
+
+      // Tools
+      { path: 'randjp50', component: () => import('pages/randjp50.vue') }
     ]
   },
 
