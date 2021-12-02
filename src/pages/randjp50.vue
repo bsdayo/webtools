@@ -5,7 +5,7 @@
       <q-tab name="options" label="选项" />
     </q-tabs>
 
-    <div class="page-content">
+    <div class="page-content-with-tabs">
       <div id="gen-view" class="tab-view flex-center column" v-if="currentTab === 'gen'">
         <div class="text-h5 q-mb-lg">
           随机五十音练习

@@ -1,3 +1,4 @@
+import toolsData from '../data/tools.json'
 
 const routes = [
   {
@@ -5,9 +6,6 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-
-      // Tools
-      { path: 'randjp50', component: () => import('pages/randjp50.vue') }
     ]
   },
 
@@ -18,5 +16,12 @@ const routes = [
     component: () => import('pages/Error404.vue')
   }
 ]
+
+for (let i = 0; i < toolsData.length; i++) {
+  routes[0].children.push({
+    path: toolsData[i].name,
+    component: () => import(`pages/${toolsData[i].name}.vue`)
+  })
+}
 
 export default routes

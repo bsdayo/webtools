@@ -3,7 +3,7 @@
 @import url($font-main-url);
 
 * {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: $font-main-name, sans-serif;
 }
 
 .page-tabs {
@@ -14,6 +14,10 @@
 }
 
 .page-content {
+  padding: 40px;
+}
+
+.page-content-with-tabs {
   margin-top: 50px;
   padding: 40px;
 }

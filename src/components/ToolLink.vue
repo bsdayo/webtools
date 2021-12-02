@@ -1,7 +1,7 @@
 <template>
   <q-item
     clickable
-    :to="name"
+    :to="'/' + name"
   >
     <q-item-section
       v-if="icon"

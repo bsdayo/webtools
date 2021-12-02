@@ -27,12 +27,10 @@
       class="column justify-between"
     >
       <q-list>
-        <q-item-label
-          header
-        >
+        <q-item-label header>
           所有工具
         </q-item-label>
-
+        
         <ToolLink
           v-for="(tool, index) in toolsData"
           :key="index"
@@ -82,7 +80,14 @@ export default defineComponent({
   setup () {
     const router = useRouter()
     const leftDrawerOpen = ref(false)
-    const currentTool = computed(() => router.currentRoute.value.path.slice(1))
+
+    const currentTool = computed(() => {
+      let temp = router.currentRoute.value.path.slice(1)
+      temp = temp.charAt(temp.length - 1) === '/'
+        ? temp.substring(0, temp.length-1)
+        : temp
+      return temp
+    })
 
     return {
       toolsData,
