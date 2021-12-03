@@ -1,3 +1,7 @@
+# Deploy files
+deploy.sh
+/deploy
+
 .DS_Store
 .thumbs.db
 node_modules

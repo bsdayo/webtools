@@ -1,6 +1,10 @@
 <template>
   <q-page>
-    <q-tabs align="center" v-model="currentTab" class="page-tabs bg-primary text-white shadow-4">
+    <q-tabs
+      align="center"
+      v-model="currentTab"
+      class="page-tabs text-white shadow-4"
+      :class="[$q.dark.isActive ? 'bg-dark' : 'bg-primary']">
       <q-tab name="gen" label="生成" />
       <q-tab name="options" label="选项" />
     </q-tabs>

@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh Lpr lFf">
-    <q-header :class="['bg-primary', currentTool === '' ? 'shadow-4' : '']">
+    <q-header :class="[$q.dark.isActive ? 'bg-dark' : 'bg-primary', currentTool === '' ? 'shadow-4' : '']">
       <q-toolbar>
         <q-btn
           flat
@@ -27,7 +27,16 @@
       class="column justify-between"
     >
       <q-list>
-        <q-item-label header>
+        <q-item clickable v-ripple to="settings">
+          <q-item-section avatar>
+            <q-icon name="settings" />
+          </q-item-section>
+          <q-item-section :class="$q.dark.isActive ? 'text-white' : 'text-black'">
+            设置
+          </q-item-section>
+        </q-item>
+
+        <q-item-label class="q-mt-md" header>
           所有工具
         </q-item-label>
         
@@ -66,8 +75,9 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed, provide } from 'vue'
 import { useRouter } from 'vue-router'
+import { useQuasar, setCssVar } from 'quasar'
 
 import ToolLink from '../components/ToolLink.vue'
 import toolsData from '../data/tools.json'
@@ -80,6 +90,7 @@ export default defineComponent({
   setup () {
     const router = useRouter()
     const leftDrawerOpen = ref(false)
+    const $q = useQuasar()
 
     const currentTool = computed(() => {
       let temp = router.currentRoute.value.path.slice(1)
@@ -88,6 +99,25 @@ export default defineComponent({
         : temp
       return temp
     })
+
+    // Settings
+    if (!$q.localStorage.has('settings')) {
+      $q.localStorage.set('settings', {
+        darkmode: false,
+        primaryColor: '#1f1eaa'
+      })
+    }
+
+    const settings = $q.localStorage.getItem('settings')
+    provide('settings', settings)
+
+    function applySettings() {
+      $q.dark.set(settings.darkmode)
+      setCssVar('primary', settings.primaryColor)
+    }
+    provide('applySettings', applySettings)
+
+    applySettings()
 
     return {
       toolsData,
