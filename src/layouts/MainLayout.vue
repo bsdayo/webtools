@@ -101,20 +101,23 @@ export default defineComponent({
     })
 
     // Settings
-    if (!$q.localStorage.has('settings')) {
-      $q.localStorage.set('settings', {
-        darkmode: false,
-        primaryColor: '#145ea8'
-      })
+    const defaultSettings = {
+      darkmode: false,
+      primaryColor: '#145ea8'
     }
 
-    const settings = $q.localStorage.getItem('settings')
-    provide('settings', settings)
+    if (!$q.localStorage.has('settings')) {
+      $q.localStorage.set('settings', defaultSettings)
+    }
+
+    const settings = Object.assign(defaultSettings, $q.localStorage.getItem('settings'))
 
     function applySettings() {
       $q.dark.set(settings.darkmode)
       setCssVar('primary', settings.primaryColor)
     }
+
+    provide('settings', settings)
     provide('applySettings', applySettings)
 
     applySettings()
