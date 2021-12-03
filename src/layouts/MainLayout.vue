@@ -104,7 +104,7 @@ export default defineComponent({
     if (!$q.localStorage.has('settings')) {
       $q.localStorage.set('settings', {
         darkmode: false,
-        primaryColor: '#1f1eaa'
+        primaryColor: '#145ea8'
       })
     }
 
